@@ -1,4 +1,4 @@
-# Octokit.GraphQL
+# 🐱 `Riverside.Octokit`
 
 [![Build status](https://ci.appveyor.com/api/projects/status/falhvlth7og0nkw4/branch/main?svg=true)](https://ci.appveyor.com/project/github-windows/octokit-graphql/branch/main)
 [![codecov](https://codecov.io/gh/octokit/octokit.graphql.net/branch/main/graph/badge.svg)](https://codecov.io/gh/octokit/octokit.graphql.net)
