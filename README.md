@@ -6,17 +6,17 @@
   <a title="NuGet" target="_blank" href="https://www.nuget.org/packages/Riverside.Octokit">
     <img align="left" src="http://img.shields.io/nuget/v/Riverside.Octokit.svg" alt="Release" />
   </a>
-  <a title="GitHub Releases" target="_blank" href="https://github.com/RiversideValley/{repo name}">
-    <img align="left" src="https://img.shields.io/github/v/release/RiversideValley/{repo name}?include_prereleases" alt="Release" />
+  <a title="GitHub Releases" target="_blank" href="https://github.com/RiversideValley/Octokit">
+    <img align="left" src="https://img.shields.io/github/v/release/RiversideValley/Octokit?include_prereleases" alt="Release" />
   </a>
-  <a title="Repository Size" target="_blank" href="https://github.com/RiversideValley/{repo name}/activity">
-    <img align="left" src="https://img.shields.io/github/repo-size/RiversideValley/{repo name}?color=%23cc0000" alt="Size" />
+  <a title="Repository Size" target="_blank" href="https://github.com/RiversideValley/Octokit/activity">
+    <img align="left" src="https://img.shields.io/github/repo-size/RiversideValley/Octokit?color=%23cc0000" alt="Size" />
   </a>
-  <a title="Platform" target="_blank" href="https://github.com/topics/{repo platform}">
-    <img align="left" src="https://img.shields.io/badge/platform-{repo platform}-{repo platform colour}" alt="Platform" />
+  <a title="Platform" target="_blank" href="https://github.com/topics/dotnet">
+    <img align="left" src="https://img.shields.io/badge/platform-.NET-purple" alt="Platform" />
   </a>
-  <a title="Language" target="_blank" href="https://github.com/RiversideValley/{repo name}/search?l=c%23">
-    <img align="left" src="https://img.shields.io/badge/language-{repo lang}-{repo lang colour}" alt="Language" />
+  <a title="Language" target="_blank" href="https://github.com/RiversideValley/Octokit/search?l=c%23">
+    <img align="left" src="https://img.shields.io/badge/language-C%23-IUnknown" alt="Language" />
   </a>
 </p>
 
