@@ -4,10 +4,10 @@ dotnet: 2.0.0
 script:
  - dotnet restore
  - dotnet build
- - dotnet test ./Octokit.GraphQL.Core.UnitTests/Octokit.GraphQL.Core.UnitTests.csproj
- - dotnet test ./Octokit.GraphQL.UnitTests/Octokit.GraphQL.UnitTests.csproj
- - dotnet test ./Octokit.GraphQL.Core.Generation.UnitTests/Octokit.GraphQL.Core.Generation.UnitTests.csproj
- - dotnet test ./Octokit.GraphQL.IntegrationTests/Octokit.GraphQL.IntegrationTests.csproj
+ - dotnet test ./Octokit.Core.UnitTests/Octokit.Core.UnitTests.csproj
+ - dotnet test ./Octokit.UnitTests/Octokit.UnitTests.csproj
+ - dotnet test ./Octokit.Core.Generation.UnitTests/Octokit.Core.Generation.UnitTests.csproj
+ - dotnet test ./Octokit.IntegrationTests/Octokit.IntegrationTests.csproj
  addons:
   apt:
     sources:

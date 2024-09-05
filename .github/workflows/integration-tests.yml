@@ -19,13 +19,13 @@ jobs:
         with:
           dotnet-version: 3.1.101
       - name: Build using .NET Core
-        run: dotnet build Octokit.GraphQL.sln -c ${{ env.config }}
+        run: dotnet build Octokit.sln -c ${{ env.config }}
       - name: Run integration tests
         run: >-
           dotnet test -c ${{ env.config }} --no-build /p:CollectCoverage=true
           /p:CoverletOutputFormat=opencover
-          /p:Exclude="[Octokit.GraphQL]Octokit.GraphQL.*"
-          .\Octokit.GraphQL.IntegrationTests\Octokit.GraphQL.IntegrationTests.csproj
+          /p:Exclude="[Octokit]Octokit.*"
+          .\Octokit.IntegrationTests\Octokit.IntegrationTests.csproj
         env:
           OCTOKIT_GQL_OAUTHTOKEN: ${{ secrets.OCTOKIT_GQL_OAUTHTOKEN }}
           OCTOKIT_GQL_GITHUBUSERNAME: ${{ secrets.OCTOKIT_GQL_GITHUBUSERNAME }}

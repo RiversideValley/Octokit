@@ -56,11 +56,11 @@ var query = new Query()
     .Select(q => new
     {
         repo1 = q.Repository("octokit", "octokit.net").Select(fragment).Single(),
-        repo2 = q.Repository("octokit", "octokit.graphql.net").Select(fragment).Single(),
+        repo2 = q.Repository("octokit", "Octokit.net").Select(fragment).Single(),
     });
 
 var result = Connection.Run(query).Result;
 
 Assert.Equal("octokit.net", result.repo1.StringField1);
-Assert.Equal("octokit.graphql.net", result.repo2.StringField1);
+Assert.Equal("Octokit.net", result.repo2.StringField1);
 ```

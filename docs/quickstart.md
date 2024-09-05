@@ -1,4 +1,4 @@
-# Octokit.GraphQL.net Quickstart
+# Octokit.net Quickstart
 
 ## Creating a connection
 
@@ -8,7 +8,7 @@ For more information on creating personal access tokens, see
 [the article](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 
 ```csharp
-using Octokit.GraphQL;
+using Octokit;
 
 var productInformation = new ProductHeaderValue("YOUR_PRODUCT_NAME", "YOUR_PRODUCT_VERSION");
 var connection = new Connection(productInformation, YOUR_OAUTH_TOKEN);

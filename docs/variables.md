@@ -4,13 +4,13 @@ Variables can be used to pass parameters to [compiled queries](compiling-queries
 
 To define a variable, you should:
 
-- Add a `using static Octokit.GraphQL.Variable` statement to your file
+- Add a `using static Octokit.Variable` statement to your file
 - Add a `Var(name)` call to the queries where you want to pass in a variable
 
 For example:
 
 ```csharp
-using static Octokit.GraphQL.Variable;
+using static Octokit.Variable;
 
 var query = new Query()
     .Repository(Var("owner"), Var("name"))
@@ -27,7 +27,7 @@ You can now use those variables by passing an `IDictionary<string, object>` into
 var vars = new Dictionary<string, object>
 {
     { "owner", "octokit" },
-    { "name", "Octokit.GraphQL.net" },
+    { "name", "Octokit.net" },
 };
 
 var result = await connection.Run(query, vars);

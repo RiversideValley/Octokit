@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Octokit.GraphQL;
-using Octokit.GraphQL.Core.Generation;
+using Octokit;
+using Octokit.Core.Generation;
 using System.IO;
 using System.Linq;
 
@@ -42,15 +42,15 @@ namespace Generate
                 File.Delete(csFile);
             }
 
-            var header = new ProductHeaderValue("Octokit.GraphQL", "0.1");
+            var header = new ProductHeaderValue("Octokit", "0.1");
             var connection = new Connection(header, token);
 
             Console.WriteLine("Reading from " + connection.Uri);
             var schema = await SchemaReader.ReadSchema(connection);
 
-            foreach (var file in CodeGenerator.Generate(schema, "Octokit.GraphQL", "Octokit.GraphQL.Model"))
+            foreach (var file in CodeGenerator.Generate(schema, "Octokit", "Octokit.Model"))
             {
-                // fix for int32 overflow, see https://github.com/octokit/octokit.graphql.net/issues/311
+                // fix for int32 overflow, see https://github.com/octokit/Octokit.net/issues/311
                 if (file.Content.Contains("int? DatabaseId { get; }"))
                 {
                     file.Content = file.Content.Replace("int? DatabaseId { get; }", "long? DatabaseId { get; }");

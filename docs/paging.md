@@ -84,7 +84,7 @@ var result = await connection.Run(query);
 ```
 
 To enable auto-paging, you simply call `.AllPages()` where you would usually call `.Nodes`.
-Because Octokit.GraphQL.net understands your query, it can rewrite the query to automatically
+Because Octokit.net understands your query, it can rewrite the query to automatically
 do the paging for you.
 
 This also works for nested queries:

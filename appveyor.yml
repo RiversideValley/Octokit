@@ -10,18 +10,18 @@ build:
 
 build_script:
 - ps: >-
-    msbuild Octokit.GraphQL.sln --% /bl:output.binlog /verbosity:minimal
+    msbuild Octokit.sln --% /bl:output.binlog /verbosity:minimal
 
 after_build:
   - nuget pack
 
 after_test:
-  - dotnet test -c Release --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude="[Octokit.GraphQL]Octokit.GraphQL.*" .\Octokit.GraphQL.UnitTests\Octokit.GraphQL.UnitTests.csproj
-  - dotnet test -c Release --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude="[Octokit.GraphQL]Octokit.GraphQL.*" .\Octokit.GraphQL.Core.UnitTests\Octokit.GraphQL.Core.UnitTests.csproj
-  - dotnet test -c Release --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude="[Octokit.GraphQL]Octokit.GraphQL.*" .\Octokit.GraphQL.Core.Generation.UnitTests\Octokit.GraphQL.Core.Generation.UnitTests.csproj
-  - '%USERPROFILE%\.nuget\packages\codecov\1.10.0\tools\codecov.exe -f .\Octokit.GraphQL.UnitTests\coverage.opencover.xml'
-  - '%USERPROFILE%\.nuget\packages\codecov\1.10.0\tools\codecov.exe -f .\Octokit.GraphQL.Core.UnitTests\coverage.opencover.xml'
-  - '%USERPROFILE%\.nuget\packages\codecov\1.10.0\tools\codecov.exe -f .\Octokit.GraphQL.Core.Generation.UnitTests\coverage.opencover.xml'
+  - dotnet test -c Release --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude="[Octokit]Octokit.*" .\Octokit.UnitTests\Octokit.UnitTests.csproj
+  - dotnet test -c Release --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude="[Octokit]Octokit.*" .\Octokit.Core.UnitTests\Octokit.Core.UnitTests.csproj
+  - dotnet test -c Release --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude="[Octokit]Octokit.*" .\Octokit.Core.Generation.UnitTests\Octokit.Core.Generation.UnitTests.csproj
+  - '%USERPROFILE%\.nuget\packages\codecov\1.10.0\tools\codecov.exe -f .\Octokit.UnitTests\coverage.opencover.xml'
+  - '%USERPROFILE%\.nuget\packages\codecov\1.10.0\tools\codecov.exe -f .\Octokit.Core.UnitTests\coverage.opencover.xml'
+  - '%USERPROFILE%\.nuget\packages\codecov\1.10.0\tools\codecov.exe -f .\Octokit.Core.Generation.UnitTests\coverage.opencover.xml'
 
 artifacts:
   - path: '*.nupkg'

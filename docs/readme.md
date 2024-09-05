@@ -1,4 +1,4 @@
-# Octokit.GraphQL.net
+# Octokit.net
 
 ## Table of Contents
 

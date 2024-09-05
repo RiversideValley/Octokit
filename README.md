@@ -1,12 +1,10 @@
-# 🐱 `Riverside.Octokit`
+# 🐱 `Octokit`
 
-[![Build status](https://ci.appveyor.com/api/projects/status/falhvlth7og0nkw4/branch/main?svg=true)](https://ci.appveyor.com/project/github-windows/octokit-graphql/branch/main)
-[![codecov](https://codecov.io/gh/octokit/octokit.graphql.net/branch/main/graph/badge.svg)](https://codecov.io/gh/octokit/octokit.graphql.net)
-[![NuGet](http://img.shields.io/nuget/v/Octokit.GraphQL.svg)](https://www.nuget.org/packages/Octokit.GraphQL)
+[![NuGet](http://img.shields.io/nuget/v/Riverside.Octokit.svg)](https://www.nuget.org/packages/Riverside.Octokit)
 
 **Note**: This software is currently beta. There are few things left, and there might be bugs - be warned!
 
-Octokit.GraphQL gives you access to the GitHub GraphQL API from .NET. It exposes the GitHub GraphQL API as a strongly-typed LINQ-like API, aiming to follow the GraphQL query syntax as closely as possible, which giving the benefits of strong typing in your favorite .NET language.
+Octokit gives you access to the GitHub GraphQL API from .NET. It exposes the GitHub GraphQL API as a strongly-typed LINQ-like API, aiming to follow the GraphQL query syntax as closely as possible, which giving the benefits of strong typing in your favorite .NET language.
 
 ## Documentation
 
@@ -15,14 +13,14 @@ You can find our documentation [here](docs/readme.md).
 ## Installing from Nuget
 
 ```
-Install-Package Octokit.GraphQL -IncludePrerelease
+Install-Package Octokit -IncludePrerelease
 ```
 
 ## Usage Example
 
 ```csharp
-using Octokit.GraphQL;
-using static Octokit.GraphQL.Variable;
+using Octokit;
+using static Octokit.Variable;
 
 var productInformation = new ProductHeaderValue("YOUR_PRODUCT_NAME", "YOUR_PRODUCT_VERSION");
 var connection = new Connection(productInformation, YOUR_OAUTH_TOKEN);
@@ -42,7 +40,7 @@ var query = new Query()
 var vars = new Dictionary<string, object>
 {
     { "owner", "octokit" },
-    { "name", "octokit.graphql.net" },
+    { "name", "Octokit.net" },
 };
 
 var result =  await connection.Run(query, vars);
@@ -51,8 +49,8 @@ Console.WriteLine(result.Login + " & " + result.Name + " Rocks!");
 ```
 
 ```csharp
-using Octokit.GraphQL;
-using Octokit.GraphQL.Model;
+using Octokit;
+using Octokit.Model;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

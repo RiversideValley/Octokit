@@ -23,6 +23,6 @@ jobs:
       - name: Generate
         run: >-
           dotnet run --project ./Tools/Generate/Generate.csproj -- ${{
-          github.token }} ./Octokit.GraphQL/
+          github.token }} ./Octokit/
       - name: Build
         run: dotnet build

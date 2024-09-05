@@ -27,22 +27,22 @@ jobs:
         with:
           nuget-version: 5.x
       - name: Build using .NET Core
-        run: dotnet build Octokit.GraphQL.sln -c ${{ env.config }}
-      - name: Run Octokit.GraphQL.UnitTests
+        run: dotnet build Octokit.sln -c ${{ env.config }}
+      - name: Run Octokit.UnitTests
         run: >-
           dotnet test -c ${{ env.config }} --no-build
-          .\Octokit.GraphQL.UnitTests\Octokit.GraphQL.UnitTests.csproj
-      - name: Run Octokit.GraphQL.Core.UnitTests
+          .\Octokit.UnitTests\Octokit.UnitTests.csproj
+      - name: Run Octokit.Core.UnitTests
         run: >-
           dotnet test -c ${{ env.config }} --no-build
-          .\Octokit.GraphQL.Core.UnitTests\Octokit.GraphQL.Core.UnitTests.csproj
-      - name: Run Octokit.GraphQL.Core.Generation.UnitTests
+          .\Octokit.Core.UnitTests\Octokit.Core.UnitTests.csproj
+      - name: Run Octokit.Core.Generation.UnitTests
         run: >-
           dotnet test -c ${{ env.config }} --no-build
-          .\Octokit.GraphQL.Core.Generation.UnitTests\Octokit.GraphQL.Core.Generation.UnitTests.csproj
+          .\Octokit.Core.Generation.UnitTests\Octokit.Core.Generation.UnitTests.csproj
       - name: Create package using .nuspec
         run: >-
-          dotnet pack Octokit.GraphQL.Pack/Octokit.GraphQL.Pack.csproj --output
+          dotnet pack Octokit.Pack/Octokit.Pack.csproj --output
           ${{ env.PackageOutputPath }}
       - name: Upload nupkg artifact
         uses: actions/upload-artifact@v2
